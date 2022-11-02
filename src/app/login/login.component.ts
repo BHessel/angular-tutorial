@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home'])
       }
       if (response === 403) {
-        this.router.navigate(['home'])
+        this.errorMsg = "Invalid Credentials"
       }
     }
   }
