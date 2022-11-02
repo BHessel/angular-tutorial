@@ -7,17 +7,22 @@
         <div class="view-all">View All</div>
       </div>
       <div class="movies-thumbnail">
-        <div class="movie">
-            <div class="cover">
-                <img src="" alt="" />
+        <div class="movie" *ngFor="let movie of trendingMovies">
+          <div class="cover">
+            <img [src]="movie.cover" alt="" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ movie.name }}</div>
+            <div class="rating">
+              <span class="rating-value">{{ movie.rating }}</span>
+              <app-star-rating [rating]="movie.rating" [isReadOnly]="true">
+              </app-star-rating>
             </div>
-        </div>
-        <div class="detail">
-            <div class="name"></div>
-            <div class="rating"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="popular-movies"></div>
 </div>
