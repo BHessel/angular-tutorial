@@ -45,4 +45,8 @@ export class HomeComponent implements OnInit {
         console.log('pop movs', this.popMovies);
       });
   }
+
+  goToMovie(type: string, id: string) {
+    this.router.navigate(['movie', type, id]);
+  }
 }

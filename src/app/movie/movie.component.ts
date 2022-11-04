@@ -20,19 +20,14 @@ export class MovieComponent implements OnInit {
     this.type = this.route.snapshot.params['type'];
     this.id = this.route.snapshot.params['id'];
     if (this.type === 'trending') {
-      this.url = 'http://localhost:400/assets/data/trending-movies.json';
+      this.url = 'http://localhost:4200/assets/data/trending-movies.json';
     }
-    if (this.type === 'out') {
-      this.url = 'http://localhost:400/assets/data/out-now.json';
+    if (this.type === 'outnow') {
+      this.url = 'http://localhost:4200/assets/data/out-now.json';
     }
     if (this.type === 'popular') {
-      this.url = 'http://localhost:400/assets/data/pop-movies.json';
+      this.url = 'http://localhost:4200/assets/data/pop-movies.json';
     }
-    //  else if (this.type === 'outNow') {
-    //   this.url = 'http://localhost:400/assets/data/out-now.json';
-    // } else if (this.type === 'pop') {
-    //   this.url = 'http://localhost:400/assets/data/pop-movies.json';
-    // }
     this.getMovie();
   }
 
@@ -45,6 +40,7 @@ export class MovieComponent implements OnInit {
       if (index > -1) {
         this.movie = this.movies[index];
       }
+      // debugger
     });
   }
 }

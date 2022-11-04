@@ -8,7 +8,7 @@
       </div>
       <div class="movies-thumbnail">
         <div class="movie" *ngFor="let movie of trendingMovies">
-          <div class="cover">
+          <div class="cover" (click)="goToMovie('trending', movie.id)">
             <img [src]="movie.cover" alt="" />
           </div>
           <div class="detail">
@@ -30,11 +30,13 @@
       </div>
       <div class="movies-thumbnail">
         <div class="movie" *ngFor="let movie of outNow">
-          <div class="cover">
+          <div class="cover" (click)="goToMovie('outnow', movie.id)">
             <img [src]="movie.cover" alt="" />
           </div>
           <div class="detail">
-            <div class="name">{{ movie.name }}</div>
+            <div class="name" (click)="goToMovie('outnow', movie.id)">
+              {{ movie.name }}
+            </div>
             <div class="rating">
               <span class="rating-value">{{ movie.rating }}</span>
               <app-star-rating [rating]="movie.rating" [isReadOnly]="true">
@@ -53,11 +55,10 @@
     </div>
     <div class="movies-thumbnail">
       <div class="movie" *ngFor="let movie of popMovies">
-        <!-- <div class="cover">
-          <img [src]="movie.cover" alt="" />
-        </div> -->
         <div class="detail">
-          <div class="name">{{ movie.name }}</div>
+          <div class="name" (click)="goToMovie('popular', movie.id)">
+            {{ movie.name }}
+          </div>
           <div class="rating">
             <span class="rating-value">{{ movie.rating }}</span>
             <app-star-rating [rating]="movie.rating" [isReadOnly]="true">
