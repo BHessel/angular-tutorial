@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   getOutNow() {
     this.http
-      .get('http://localhost:4200/assets/data/in-theatre.json')
+      .get('http://localhost:4200/assets/data/out-now.json')
       .subscribe((movies) => {
         this.outNow = movies;
         console.log('outNow', this.outNow);
