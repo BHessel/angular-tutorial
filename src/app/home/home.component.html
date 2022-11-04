@@ -22,7 +22,49 @@
         </div>
       </div>
     </div>
+
+    <div class="theatre-movies">
+      <div class="top">
+        <h4>In Theatre Now</h4>
+        <div class="view-all">View All</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div class="movie" *ngFor="let movie of outNow">
+          <div class="cover">
+            <img [src]="movie.cover" alt="" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ movie.name }}</div>
+            <div class="rating">
+              <span class="rating-value">{{ movie.rating }}</span>
+              <app-star-rating [rating]="movie.rating" [isReadOnly]="true">
+              </app-star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="popular-movies"></div>
+  <div class="popular-movies">
+    <div class="top">
+      <h4>Popular Movies</h4>
+      <div class="view-all">View All</div>
+    </div>
+    <div class="movies-thumbnail">
+      <div class="movie" *ngFor="let movie of popMovies">
+        <!-- <div class="cover">
+          <img [src]="movie.cover" alt="" />
+        </div> -->
+        <div class="detail">
+          <div class="name">{{ movie.name }}</div>
+          <div class="rating">
+            <span class="rating-value">{{ movie.rating }}</span>
+            <app-star-rating [rating]="movie.rating" [isReadOnly]="true">
+            </app-star-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
